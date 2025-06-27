@@ -1,62 +1,132 @@
-<div align='center'>
+# 프로젝트 기술 설계서: Amazing Core
 
-## 프로젝트 소개
+## 📘 보자마자 피트니스 - 어메이징 코어 (Amazing Core)
 
-<img src="https://github.com/JISUSAMA/JISUSAMA/assets/38304918/35dc59a4-294a-4c78-a4a8-202fdb85e399">
+![대표 이미지](https://github.com/JISUSAMA/JISUSAMA/assets/38304918/35dc59a4-294a-4c78-a4a8-202fdb85e399)
 
+코어 근육을 집중적으로 단련할 수 있는 실내 운동 콘텐츠
+"운동은 어렵지만, 게임이라면 재밌잖아?"
+실감형 운동과 미션 중심의 학습형 트레이닝이 결합된 홈 피트니스 게임!
 
-### 보자마자 피트니스 - 어메이징 코어(Amazing Core)
+**7가지 코어 트레이닝**, **3가지 운동형 게임 콘텐츠**,
+**360도 자세 뷰어**, **누적 운동 데이터**, **레벨 시스템**,
+**프로필 기반 맞춤 콘텐츠**, **현지화 지원**을 제공하는
+**몰입형 코어 운동 콘텐츠**
 
-신체 근육의 근본이 되는 코어 근육을 단련하여 허리 및 전신 건강을 지키는 운동을 수행하는 실감형 콘텐츠 어메이징 코어!
+> 센서와 연동하여 유저의 움직임을 실시간으로 반영하는 구조
 
-- 7가지의 트레이닝 콘텐츠로 코어 운동을 해보자!
-- 운동만으로 집중이 어렵다면 3가지 게임으로 코어 운동을 즐기자!
-- 360도 모드를 활용해 자세를 정확히 보자!
+---
 
-## 작업 기간
+## 📅 개발 기간
 
-__2022.10 ~ 2023.03(6개월)__ <br><br>
+* **2022년 10월 \~ 2023년 3월** (6개월)
 
-## 기술 스택
+## 🛠️ 기술 스택
 
-Unity3D 
+* **엔진**: Unity3D (C#)
+* **영상 시스템**: Unity VideoPlayer, RenderTexture
+* **센서 연동**: BLE 기반 외부 센서 (핵심 자세 트래킹)
+* **UI/UX**: Unity UI, Coroutine 내러티브, DOTween 애니메이션
+* **3D 카메라**: Cinemachine FreeLook, 카메라 줌/회전 시스템
+* **언어 시스템**: Unity Localization
+* **데이터 관리**: PlayerPrefs 기반 운동 이력, 레벨 저장
 
-<br>
+---
 
-## 기여도
-### 2022.10 ~
+## 💼 기여도
 
-<img src="https://github.com/JISUSAMA/JISUSAMA/assets/38304918/7619de91-8280-44f7-99a4-0d5a9cee3220">
+### 🎨 UI 콘텐츠 설계 및 적용
 
-<img src="https://github.com/JISUSAMA/JISUSAMA/assets/38304918/c5c5ca44-5010-4343-a0e5-11b4806658f9
-">
-UI 컨텐츠 적용 및 트레이닝 컨텐츠 1종/ 게임 3종 구현 개발
+| 메인 화면                                                                                             | 트레이닝 진행                                                                                           | 게임 선택                                                                                             |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| ![UI1](https://github.com/JISUSAMA/JISUSAMA/assets/38304918/7619de91-8280-44f7-99a4-0d5a9cee3220) | ![UI2](https://github.com/JISUSAMA/JISUSAMA/assets/38304918/c5c5ca44-5010-4343-a0e5-11b4806658f9) | ![UI3](https://github.com/JISUSAMA/JISUSAMA/assets/38304918/bf41bb63-7ec7-498d-927d-a52ccc14d47b) |
 
-<img src="https://github.com/JISUSAMA/JISUSAMA/assets/38304918/bf41bb63-7ec7-498d-927d-a52ccc14d47b">
+### 🏋️ 트레이닝 콘텐츠 및 게임 구현
 
-__게임 3종 구현 개발__
-- 딜리버리 맨 Delivery Man
-- 와이어 워크 Wire Walk
-- 타워 메이커 Tower Maker
+* 난이도별 7가지 트레이닝 (초급/중급/고급)
+* 타이머, 영상, 자세 피드백 연동
+* 운동 완료 시 레벨 상승 및 데이터 저장
 
+### 🎮 게임 콘텐츠
 
-### 2022.10 ~
-어메이징 코어 영문 버전 제작 작업
+* **Tower Maker**: 블록을 쌓으며 복부 긴장 유지
+* **Delivery Man**: 중심을 유지하며 목표 지점 도달
+* **Wire Walking**: 줄타기를 하며 균형 유지
 
-### 2023.03~
-어메이징 코어, 현지화 작업<br>
-Localization을 사용한 한글 버전과 영문 버전 통합
+---
 
-<br><br>
+## 📺 영상 콘텐츠 흐름
 
+```
+▶ 설명 보기
+   └ 튜토리얼 영상
+       └ 운동 영상 재생
+           └ 난이도별 라운드 반복 (초1 / 중2 / 고3회)
+               └ 완료 시 클리어 영상
+```
 
+---
 
-<h2>유튜브 홍보 영상 링크</h2>
+## 🧱 시스템 구조 및 주요 스크립트
 
-[![Video Label](http://img.youtube.com/vi/Un5JtJjEnXU/0.jpg)](https://www.youtube.com/watch?v=Un5JtJjEnXU)
+### 1. 전역 매니저
 
-- [보자마자 피트니스 - 어메이징 코어 Google Play 링크](https://play.google.com/store/apps/details?id=com.gateways.amazingcore&hl=ko-KR)<br>
+* `GameManager`: 사용자, 트레이닝/게임 상태, 기록 저장
+* `SoundManager`, `SoundCtrl`: BGM/SFX 전체 제어
 
-- [보자마자 피트니스 - 어메이징 코어 공식 컨텐츠 사이트](https://bojamajafitness.com/article/%EB%B3%B4%EC%9E%90%EB%A7%88%EC%9E%90-%ED%94%BC%ED%8A%B8%EB%8B%88%EC%8A%A4-%EC%BD%98%ED%85%90%EC%B8%A0/8/9/)
+### 2. 트레이닝 루틴
 
-</div>
+* `Training_AppManager`: 트레이닝 흐름 제어
+* `Training_UIManager`: 타이머, 영상 재생, 피드백 UI
+* `VideoHandle`: 재생 상태 확인 및 클립 전환
+
+### 3. 게임 콘텐츠
+
+* `Game_UIManagaer`: 게임 타이머, 미션 진행, 클리어 UI
+* `Game_DataManager`: 각 게임 스테이지 및 레벨 기록
+* `TikTokCtrl`: TowerMaker의 블록 생성 및 카메라 위치 이동
+
+### 4. 3D 뷰어 모드
+
+* `MediaPlayer`: 운동 동작 3D 모델 프레임 순차 재생
+* `ObjectZoomControls`, `PinchDetection`: 터치 줌/회전 지원
+
+### 5. 입력 및 UI 상호작용
+
+* `InputManager`, `TouchControls`: Unity Input System 기반 터치 추적
+* `LocalizeStringEventManager`, `ViewTrainingManager`: 텍스트 현지화
+
+---
+
+## 🔁 게임 전체 흐름
+
+```
+▶ 로그인 → 모드 선택
+   ├ 트레이닝 모드
+   │   └ 단계별 운동 → 운동 데이터 저장 → 레벨 상승
+   └ 게임 모드
+       └ 게임 선택 → 스테이지 선택 → 클리어 여부 저장
+▶ 3D 자세 보기 모드
+▶ 프로필 편집 및 기록 확인
+```
+
+---
+
+## 🔖 특징 및 효과
+
+* 🔄 영상 기반 운동 흐름 구성
+* 🧠 반복 학습 구조 (난이도/라운드)
+* 🌎 다국어 지원 (한/영)
+* 💾 데이터 저장 및 이력 확인 기능
+* 🏆 성취 기반 보상 구조 (퍼즐 이미지 해금 등)
+
+---
+
+## ✅ 정리
+
+**어메이징 코어**는
+“운동을 게임처럼, 습관을 콘텐츠처럼”
+즐기며 지속 가능한 실내 운동 루틴을 제공합니다.
+
+센서 기반 입력, 시각 효과, 반복 학습 구조,
+그리고 실시간 피드백을 통해 몰입도 높은 홈 트레이닝 경험을 제공합니다.
